@@ -26,7 +26,7 @@ export default async function Page({ params }) {
     const tflData = tflResponse.data.vrmLookupResponse.vehicleDetails.chargeability;
     const tfl = {
       ulez: tflData.isUlezChargeable !== 1,
-      lez: ![1,2].includes(tflData.isLezChargeable),
+      lez: tflDate.isLezChargeable == 0,
       cc: tflData.isCcChargeable !== 1,
       tunnels: tflResponse.data.vrmLookupResponse.vehicleDetails.isTucChargeable !== 2,
     };
