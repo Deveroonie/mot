@@ -23,7 +23,7 @@ export default async function Page({ params }) {
         vrmLookupRequest: { vRM: vrm, country: "UK", date: {} },
       }, {
         headers: {
-          "Referer: `https://tfl.gov.uk/`,
+          "Referer": `https://tfl.gov.uk/`,
           "Origin": `https://tfl.gov.uk/`
         }
       }
