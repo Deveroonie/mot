@@ -30,8 +30,8 @@ export default async function Page({ params }) {
     );
     const tflData = tflResponse.data.vrmLookupResponse.vehicleDetails.chargeability;
     const tfl = {
-      ulez: tflData.isUlezChargeable !== 1,
-      lez: tflDate.isLezChargeable == 0,
+      ulez: tflData.isUlezChargeable !== 1 && tflData.isLezChargeable == 0, // Non compliant with LEZ means non compliant with ULEZ
+      lez: tflData.isLezChargeable == 0,
       cc: tflData.isCcChargeable !== 1,
       tunnels: tflResponse.data.vrmLookupResponse.vehicleDetails.isTucChargeable !== 2,
     };
@@ -132,8 +132,8 @@ export default async function Page({ params }) {
 
     return <Component dvla={dvlaDetails} tfl={tfl} dvsa={dvsa} scotland={scotland} vrm={vrm} />
   } catch (err) {
+        console.log(err)
     if(err.response.data) {console.log(err.response.data)}
-    console.log(err)
     return <div>An unexpected error has occoured.</div>
   }
 }
