@@ -21,6 +21,11 @@ export default async function Page({ params }) {
       "https://mobileapi.tfl.gov.uk/Prod/unirucCapitaFacade/VRMLookup",
       {
         vrmLookupRequest: { vRM: vrm, country: "UK", date: {} },
+      }, {
+        headers: {
+          "Referer: `https://tfl.gov.uk/`,
+          "Origin": `https://tfl.gov.uk/`
+        }
       }
     );
     const tflData = tflResponse.data.vrmLookupResponse.vehicleDetails.chargeability;
