@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Mandatory';
+    src: url('Mandatory.woff2') format('woff2'),
+        url('Mandatory.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
