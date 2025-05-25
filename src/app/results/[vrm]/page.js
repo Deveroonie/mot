@@ -30,7 +30,7 @@ export default async function Page({ params }) {
     );
     const tflData = tflResponse.data.vrmLookupResponse.vehicleDetails.chargeability;
     const tfl = {
-      ulez: tflData.isUlezChargeable !== 1 && tflData.isLezChargeable == 0, // Non compliant with LEZ means non compliant with ULEZ
+      ulez: tflData.isUlezChargeable !== 1,
       lez: tflData.isLezChargeable == 0,
       cc: tflData.isCcChargeable !== 1,
       tunnels: tflResponse.data.vrmLookupResponse.vehicleDetails.isTucChargeable !== 2,
