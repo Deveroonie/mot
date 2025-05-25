@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react"
 import localFont from "next/font/local"
 import Script from "next/script"
+import Ad from "@/app/Ad"
 
 const numberPlateFont = localFont({ src: '../../ukplate.woff2' })
 
@@ -26,6 +27,7 @@ export default function Component({ dvla, tfl, dvsa, scotland, vrm}) {
       const end = Date.UTC(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
       return (start - end) / oneDay;
     }
+
     if(!basic || !tfl || !sLEZ || !dvsa) return <div>Loading...</div>
     return (
       <div className="w-full flex flex-row items-center justify-center">
@@ -169,9 +171,10 @@ export default function Component({ dvla, tfl, dvsa, scotland, vrm}) {
         <div className="bg-[#2a2a2a] p-4 rounded-xl mt-2">
             <h2 className="text-lg font-semibold text-white mb-4">MOT History</h2>
               {dvsa.tests.length > 0 ?             <div>
-
               {dvsa.tests.map((test, i) => (
-                <div key={test.motTestNumber} className={`bg-[#3a3a3a] shadow rounded-lg divide-y mb-2 border-2 ${test.testResult == "PASSED" ? "border-green-700":"border-red-700"}`}>
+                <div key={test.motTestNumber}>
+                {i%7==0 ? <Ad/>:""}
+               <div className={`bg-[#3a3a3a] shadow rounded-lg divide-y mb-2 border-2 ${test.testResult == "PASSED" ? "border-green-700":"border-red-700"}`}>
                   <div className="flex justify-between px-4 py-3">
                     <span>Test Date</span>
                     <span className="font-semibold">{makeDatePretty(test.completedDate)}</span>
@@ -199,13 +202,16 @@ export default function Component({ dvla, tfl, dvsa, scotland, vrm}) {
                       </div>
                     ) : <span className="text-right">Vehicle passed MOT with no advisory notices.</span>}</span>
                   </div>
-                  {i%5==0 ? <div className="aff-placement text-white">Ad Placement</div>:""}
+                  {i%3==0 ? <div className="aff-placement text-white">Ad Placement</div>:""}
+                </div>
                 </div>
               ))}
                           </div>
 : <p className="text-lg text-white">This vehicle does not have an MOT history.</p>}
           </div>
-      </div>      </div>
-
-    )
+      </div>      
+</div>    )
   }
+
+  //                  
+//
