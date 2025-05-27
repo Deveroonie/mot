@@ -19,6 +19,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+          <meta name="2aab82950de9f294a2b63fd8ae9b73955fe4f96c" content="2aab82950de9f294a2b63fd8ae9b73955fe4f96c" />
+          <meta name="referrer" content="no-referrer-when-downgrade" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
