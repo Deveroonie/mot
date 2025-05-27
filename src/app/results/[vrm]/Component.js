@@ -208,8 +208,9 @@ export default function Component({ dvla, tfl, dvsa, scotland, vrm}) {
               ))}
                           </div>
 : <p className="text-lg text-white">This vehicle does not have an MOT history.</p>}
-          </div>
-      </div>      
+          </div>  
+      </div>
+      <Script src="/_a/b.js"></Script>      
 </div>    )
   }
 

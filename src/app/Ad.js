@@ -6,6 +6,10 @@ export default function Ad() {
       {src: "/_a/rg1.gif", url: "https://regery.com/en?pr=hmuhlyc"},
       {src: "/_a/rg2.png", url: "https://regery.com/en?pr=hmuhlyc"},
       {src: "/_a/ho1.png", url: "https://hostinger.com?REFERRALCODE=Deveroonie"},
+      {src: "/_a/ht1.gif", url: "https://hilltopads.com/?ref=320161"},
+      {src: "/_a/ht2.gif", url: "https://hilltopads.com/?ref=320161"},
+      {src: "/_a/ht3.gif", url: "https://hilltopads.com/?ref=320161"}
+
     ]
 
     let ad = ads[Math.floor(Math.random()*ads.length)];
